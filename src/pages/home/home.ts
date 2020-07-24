@@ -1,3 +1,4 @@
+import { CredenciaisDTO } from './../../models/credenciais.dro';
 import { Component } from '@angular/core';
 import { NavController, IonicPage, MenuController } from 'ionic-angular';
 
@@ -8,6 +9,11 @@ import { NavController, IonicPage, MenuController } from 'ionic-angular';
 })
 export class HomePage {
 
+
+  creds: CredenciaisDTO = {
+    email:"",
+    senha:""
+  };
   constructor(public navCtrl: NavController, public menu: MenuController) {
 
   }
@@ -20,6 +26,7 @@ export class HomePage {
   }
   //Se n declarar é Public
   login() { //Push() para emplihar uma pagina em cima da outra
+    console.log(this.creds);
     this.navCtrl.setRoot('CategoriasPage');
   }
 }
