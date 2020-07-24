@@ -12,10 +12,10 @@ export class HomePage {
 
   }
 
-  ionViewWillEnter() {
+  ionViewWillEnter() { //Quando entra na pagina desabilita o meno
     this.menu.swipeEnable(false);
   }
-  ionViewDidLeave() {
+  ionViewDidLeave() { //Quando sair dela ou fazer login ela reativa
     this.menu.swipeEnable(true);
   }
   //Se n declarar é Public
