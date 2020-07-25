@@ -1,3 +1,4 @@
+import { StorageService } from './../services/storage.service';
 import { AuthService } from './../services/auth.service';
 import { ErrorInterceptorProvider } from './../interceptors/error-interceptior';
 import { CategoriaService } from './../services/domain/categoria.service';
@@ -33,7 +34,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     { provide: ErrorHandler, useClass: IonicErrorHandler },
     CategoriaService,
     ErrorInterceptorProvider,
-    AuthService
+    AuthService,
+    StorageService
   ]
 })
 export class AppModule { }

@@ -32,7 +32,7 @@ export class HomePage {
   login() { //Push() para emplihar uma pagina em cima da outra
 
     this.auth.authenticate(this.creds).subscribe(response => {
-      console.log(response.headers.get('Authorization'));
+      this.auth.successfulLogin(response.headers.get('Authorization'));
       this.navCtrl.setRoot('CategoriasPage');
     }, error => { })
 

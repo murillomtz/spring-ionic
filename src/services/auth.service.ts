@@ -1,3 +1,5 @@
+import { StorageService } from './storage.service';
+import { LocalUser } from './../models/local_user';
 import { API_CONFIG } from './../config/api.config';
 import { CredenciaisDTO } from '../models/credenciais.dto';
 import { Injectable } from "@angular/core";
@@ -5,7 +7,8 @@ import { HttpClient } from '@angular/common/http';
 
 @Injectable()
 export class AuthService {
-    constructor(public http: HttpClient) {
+    constructor(public http: HttpClient,
+                public storage: StorageService) {
 
 
     }
@@ -14,11 +17,24 @@ export class AuthService {
     authenticate(creds: CredenciaisDTO) {
         return this.http.post(
             `${API_CONFIG.baseUrl}/login`,
-             creds,
+            creds,
             {
                 observe: 'response', //PEGAR O HEARDER DA RESPOSTA
                 responseType: 'text' //O LOGIN RETORNA DE COPOR VAZIO, POR ISSO TE MQ SER TEXT
             })
+    }
+
+    successfulLogin(authorizationValue: string) {
+        let tok = authorizationValue.substring(7);
+        let user: LocalUser = {
+            token: tok
+        };
+        this.storage.setLocalUser(user);
+    }
+
+
+    logout(){
+        this.storage.setLocalUser(null);
     }
 
 }
