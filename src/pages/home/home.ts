@@ -28,6 +28,13 @@ export class HomePage {
   ionViewDidLeave() { //Quando sair dela ou fazer login ela reativa
     this.menu.swipeEnable(true);
   }
+
+  ionViewDidEnter(){
+    this.auth.refreshToken().subscribe(response => {
+      this.auth.successfulLogin(response.headers.get('Authorization'));
+      this.navCtrl.setRoot('CategoriasPage');
+    }, error => { })
+  }
   //Se n declarar é Public
   login() { //Push() para emplihar uma pagina em cima da outra
 
