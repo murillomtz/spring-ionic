@@ -5,7 +5,7 @@ import { CidadeService } from './../../services/domain/cidade.service';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { CidadeDTO } from '../../models/cidade.do';
+import { CidadeDTO } from '../../models/cidade.dto';
 
 @IonicPage()
 @Component({

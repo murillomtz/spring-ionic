@@ -2,7 +2,7 @@ import { API_CONFIG } from './../../config/api.config';
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { Observable } from 'rxjs/Rx';
-import { CidadeDTO } from '../../models/cidade.do';
+import { CidadeDTO } from '../../models/cidade.dto';
 
 @Injectable()
 export class CidadeService {
