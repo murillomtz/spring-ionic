@@ -17,7 +17,7 @@ export class PaymentPage {
   formGroup: FormGroup;
 
   constructor(
-    public navCtrl: NavController, 
+    public navCtrl: NavController,
     public navParams: NavParams,
     public formBuilder: FormBuilder) {
 
@@ -31,6 +31,6 @@ export class PaymentPage {
 
   nextPage() {
     this.pedido.pagamento = this.formGroup.value;
-    console.log(this.pedido);
+    this.navCtrl.setRoot('OrderConfirmationPage', { pedido: this.pedido });
   }
 }

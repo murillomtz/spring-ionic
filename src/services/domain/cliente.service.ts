@@ -12,24 +12,29 @@ export class ClienteService {
     }
 
     findByEmail(email: string) {
-        console.log(email);
-        console.log("log" + `${API_CONFIG.baseUrl}/clientes/email?value=${email}`);
+
         return this.http.get(`${API_CONFIG.baseUrl}/clientes/email?value=${email}`);
     }
 
-    getImageFromBucket(id : string) : Observable<any> {
-        let url = `${API_CONFIG.bucketBaseUrl}/cp${id}.jpg`
-        return this.http.get(url, {responseType : 'blob'});
+
+    findById(id: string) {
+
+        return this.http.get(`${API_CONFIG.baseUrl}/clientes/${id}`);
     }
 
-    insert(obj : ClienteDTO) {
+    getImageFromBucket(id: string): Observable<any> {
+        let url = `${API_CONFIG.bucketBaseUrl}/cp${id}.jpg`
+        return this.http.get(url, { responseType: 'blob' });
+    }
+
+    insert(obj: ClienteDTO) {
         return this.http.post(
-            `${API_CONFIG.baseUrl}/clientes`, 
+            `${API_CONFIG.baseUrl}/clientes`,
             obj,
-            { 
-                observe: 'response', 
+            {
+                observe: 'response',
                 responseType: 'text'
             }
-        ); 
+        );
     }
 }
