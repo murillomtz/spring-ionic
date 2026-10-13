@@ -47,29 +47,21 @@ O script de inicialização usa `ionic-app-scripts serve`. Para gerar a interfac
 
 ## Execução das capturas
 
-A interface compilada foi aberta no navegador. O login de demonstração, a consulta de categorias e a listagem de produtos responderam com dados do backend original, executado com o perfil `test` e H2 em memória. O cadastro foi fotografado com os campos pessoais vazios, mostrando as validações do formulário.
+A interface original foi compilada e aberta em formato móvel de 390 × 844 pixels. O login de demonstração e a consulta de dados funcionaram com o backend correspondente, usando o perfil test e H2 em memória. O carrinho foi montado pela interface com uma impressora de R$ 800,00 e dois mouses de R$ 80,00 cada, totalizando R$ 960,00.
 
-O endereço antigo das imagens de categorias não respondeu; os produtos exibiram o recurso padrão de imagem indisponível. O checkout completo, a câmera e os serviços externos de email e armazenamento não foram verificados.
+As URLs antigas das imagens não responderam; o carrinho mostra o recurso padrão de imagem indisponível. Não foi enviada uma compra. Checkout completo, câmera e serviços externos de email e armazenamento não foram exercitados. Os ajustes de execução ficaram somente na cópia local.
 
 ## Capturas do sistema
 
-Capturas reais obtidas em execução local em 12/10/2026.
+Capturas reais da interface em execução local. Nova coleta em 12–13/10/2026, com enquadramento fixo de **390 × 844 pixels (mobile)**.
 
-### Página inicial
+### Entrada do aplicativo
 
-![Página inicial](docs/screenshots/inicio.jpg)
+![Entrada do aplicativo](docs/screenshots/inicio.jpg)
 
-### Formulário de cadastro e suas validações
+### Carrinho com impressora e dois mouses
 
-![Formulário de cadastro e suas validações](docs/screenshots/cadastro.jpg)
-
-### Categorias recebidas da API
-
-![Categorias recebidas da API](docs/screenshots/categorias.jpg)
-
-### Produtos recebidos da API
-
-![Produtos recebidos da API](docs/screenshots/produtos.jpg)
+![Carrinho com impressora e dois mouses](docs/screenshots/carrinho.jpg)
 
 ## Histórico
 
